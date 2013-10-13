@@ -11,16 +11,19 @@
   <remote  name="omnirom"
            review="gerrit.omnirom.org"
            fetch="https://github.com/omnirom" />
+           
+  <remote  name="gh"
+           fetch="git://github.com" />
 
   <default revision="refs/tags/android-4.3_r3.1"
            remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="android_build" remote="omnirom" revision="android-4.3" groups="pdk" >
+  <project path="build" name="soupy031/omni_build" remote="gh" revision="android-4.3" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
 
-  <project path="android" name="android" remote="omnirom" revision="android-4.3" />
+  <project path="android" name="soupy031/omni" remote="gh" revision="android-4.3" />
 
   <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" />
   <project path="bionic" name="android_bionic" remote="omnirom" revision="android-4.3" />
@@ -34,11 +37,6 @@
   <project path="developers/docs" name="platform/developers/docs" />
   <project path="developers/samples/android" name="platform/developers/samples/android" />
   <project path="development" name="platform/development" />
-  <project path="device/asus/deb" name="device/asus/deb" groups="device,flo" />
-  <project path="device/asus/flo" name="android_device_asus_flo" remote="omnirom" revision="android-4.3" />
-  <project path="device/asus/flo-kernel" name="device/asus/flo-kernel" groups="device,flo" />
-  <project path="device/asus/grouper" name="android_device_asus_grouper" remote="omnirom" revision="android-4.3" />
-  <project path="device/asus/tilapia" name="android_device_asus_tilapia" remote="omnirom" revision="android-4.3" />
   <project path="device/common" name="device/common" />
   <project path="device/generic/armv7-a-neon" name="device/generic/armv7-a-neon" groups="pdk" />
   <project path="device/generic/common" name="device/generic/common" groups="pdk" />
@@ -50,16 +48,7 @@
   <project path="device/generic/x86" name="device/generic/x86" groups="pdk" />
   <project path="device/google/accessory/arduino" name="device/google/accessory/arduino" groups="device" />
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" groups="device" />
-  <project path="device/lge/mako" name="android_device_lge_mako" remote="omnirom" revision="android-4.3" />
-  <project path="device/lge/mako-kernel" name="device/lge/mako-kernel" groups="device,mako" revision="refs/tags/android-4.3_r2.1_" />
   <project path="device/sample" name="device/sample" groups="pdk" />
-  <project path="device/samsung/maguro" name="android_device_samsung_maguro" remote="omnirom" revision="android-4.3" />
-  <project path="device/samsung/manta" name="android_device_samsung_manta" groups="device,manta" remote="omnirom" revision="android-4.3" />
-  <project path="device/samsung/toro" name="device/samsung/toro" groups="device,tuna" />
-  <project path="device/samsung/toroplus" name="device/samsung/toroplus" groups="device,tuna" />
-  <project path="device/samsung/tuna" name="device/samsung/tuna" groups="device,tuna" />
-  <project path="device/samsung_slsi/arndale" name="device/samsung_slsi/arndale" groups="device" />
-  <project path="device/ti/panda" name="device/ti/panda" groups="device" />
   <project path="docs/source.android.com" name="platform/docs/source.android.com" />
   <project path="external/aac" name="platform/external/aac" groups="pdk" />
   <project path="external/android-clat" name="platform/external/android-clat" />
@@ -406,4 +395,14 @@
   <project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" />
   <project path="vendor/custom" name="android_vendor_custom" remote="omnirom" revision="android-4.3" />
   <project path="packages/apps/MonthCalendarWidget" name="android_packages_apps_MonthCalendarWidget" remote="omnirom" revision="android-4.3" />
+   </project>
+  <!-- Hercules Requirements -->
+  <project path="prebuilts/gcc/linux-x86/arm/Linaro-4.8" name="soupy031/LINARO" remote="gh" revision="master" />
+  <project path="device/samsung/hercules" name="soupy031/android_device_samsung_hercules" remote="gh" revision="cm-10.2" />
+  <project path="device/samsung/skyrocket" name="soupy031/android_device_samsung_skyrocket" remote="gh" revision="ely-4.3" />
+  <project path="vendor/samsung" name="soupy031/proprietary_vendor_hercules" remote="gh" revision="cm-10.2" />
+  <project path="device/samsung/msm8660-common" name="soupy031/android_device_samsung_msm8660-common" remote="gh" revision="cm-10.2" />
+  <project path="kernel/samsung/msm8660-common" name="soupy031/HERC-KERNELS" remote="gh" revision="uber-jb43" />
+  <project path="device/samsung/celox-common" name="soupy031/android_device_samsung_celox-common" remote="gh" revision="cm-10.2" />
+  <project path="device/samsung/qcom-common" name="soupy031/android_device_samsung_qcom-common" remote="gh" remote="cm-10.2" />
 </manifest>
